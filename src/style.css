@@ -12,23 +12,121 @@ figure {
     margin: 0;
 }
 
-p {
-    margin: 0.1rem;
-}
-
 main {
     text-align: center;
 }
 
+main section p {
+    margin: 0;
+    margin-bottom: 0px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+    margin: 0 0;
+    font-size: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+header nav menu {
+    margin: 0;
+}
+
+nav figure {
+    margin: 1rem;
+    display: flex;
+}
+
+nav figure img {
+    height: 5rem;
+}
+
+nav menu li i {
+    font-size: 2rem;
+    color: #011627;
+}
+
+menu ul {
+    list-style: none;
+}
+
+footer {
+    background-color: #EC0843;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.options {
+    display: none;
+    width: 100%;
+    padding: 0.5rem;
+    left: 0;
+    position: absolute;
+}
+
+.options ul,
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-bars:hover .options {
+    color: #EC0843;
+    display: block;
+    height: fit-content;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+
+.options-menu {
+    background-color: #EC0843;
+    width: 100%;
+    padding: 1rem;
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+.options-menu li,
+.options-menu a {
+    font-size: 1.5rem;
+    color: white;
+    margin: 1rem 0rem 1rem 0rem;
+    list-style: none;
+    text-decoration: none;
+}
+
+.options-menu li:hover,
+.options-menu a:hover {
+    color: #011627;
+    cursor: pointer;
+}
+
+.menu-desktop {
+    display: none;
+}
+
 
 /*CLASES*/
+
+#header-container {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
 
 .register {
     font-size: 1rem;
     color: #011627;
     position: relative;
     left: 6rem;
-    top: 2rem;
     cursor: pointer;
 }
 
@@ -36,7 +134,7 @@ main {
     color: white;
 }
 
-.login {
+.login,  .mi-info {
     height: 100vh;
     width: 100%;
     background-image: url("img/perro-mirando-arriba_23-2147787329.jpg");
@@ -51,30 +149,38 @@ main {
 
 .redes {
     display: flex;
+    justify-content: center;
 }
 
 .redes a img {
     height: 2rem;
 }
 
+.register-img {
+    display: flex;
+    align-items: center;
+}
+
+.register-img a img {
+    cursor: pointer;
+    height: 3rem;
+    margin: 0.2rem 1rem 0rem 1rem;
+}
+
 .input-login {
     border-radius: 10px;
-    border: 2px solid white;
+    border: 2px solid #011627;
     background: rgba(24, 61, 196, 0.02);
     padding: 0.5rem;
     margin: 0.2rem;
 }
 
-.register-input {
+.register-input,
+.input-profile {
+    border-radius: 10px;
     border: 2px solid #EC0843;
     width: 17rem;
 }
-
-
-/* .input-login::placeholder {
-    color: white;
-    text-align: center;
-} */
 
 .buttons {
     background-color: #EC0843;
@@ -83,13 +189,293 @@ main {
     border: none;
     width: 11.5rem;
     color: white;
-    position: relative;
-    bottom: -4rem;
-    font-size: 1.3rem;
+    bottom: -1rem;
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    cursor: pointer;
 }
+
+
 
 .listo {
     bottom: 0;
+}
+
+.profile-photo {
+    font-family: 'Ropa sans';
+    background-color: white;
+    height: 20vh;
+    width: 90%;
+    margin: 1rem;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ropa sans';
+}
+
+.element-photo {
+    width: 9rem;
+    height: 8rem;
+}
+
+
+/* Modal Mi info */
+
+.form-profile,
+.modal-fade {
+    font-family: 'Ropa sans';
+    font-weight: bold;
+    margin: 0
+}
+
+.age {
+    display: flex;
+    justify-content: center;
+}
+
+.num-age,
+.input-age {
+    border-radius: 10px;
+    border: 2px solid #EC0843;
+    width: 5rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 1rem 0 1rem;
+}
+
+.input-age {
+    width: 8rem;
+}
+
+.description-fur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description-fur textarea {
+    border: 2px solid #EC0843;
+    border-radius: 10px;
+    width: 88%;
+}
+
+.photo-fur {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+.fur-photo {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.fur-photo:hover{
+    transform: scale(1.2);
+}
+
+.hidden {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.save {
+    display: flex;
+    justify-content: center;
+}
+
+.button-agree {
+    background-color: #EC0843;
+    padding: 0.3rem;
+    border-radius: 10px;
+    border: none;
+    width: 11.5rem;
+    color: white;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+/* Cards Mi info */
+
+.mi-info {
+    background-image: url("img/peces-betta (1).jpg");
+    background-size: auto;
+}
+.card-myinfo {
+  box-sizing: border-box;  
+   display: flex;
+   justify-content: space-between;
+   width: 90%;
+   height: 13rem;
+   background-color: white;
+   padding: 0.9rem;
+   border-radius: 10px; 
+   margin: 1rem; 
+   border: 2px dashed #41EAD4;
+   box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.8);
+
+}
+
+.img-myinfo-content,
+.txt-myinfo {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 11rem;    
+    color: #EC0843; 
+    align-items: center;
+    justify-content: center; 
+}
+
+.txt-myinfo {
+    width: 60%;
+    display:flex;
+    flex-direction:column;
+    background-color: white;
+    color: #011627;
+    font-size: 16px;
+    text-align: justify;
+}
+/* Estilizando textos de cartas */
+.img-myinfo-content h3{
+    font-size: 1rem;
+    padding: 7px;
+    border-radius: 10px;
+    border: 1.5px dashed #011627;
+    color: #011627;
+}
+
+.txt-myinfo p {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;  
+    color: #011627;
+    padding: 7px;
+}
+ 
+.txt-myinfo span{
+    color: #011627;
+    font-weight: normal;
+} 
+/* Imagen de la mascota */
+.img-myinfo {
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem 0 0 0;
+    border-radius: 10px;
+}
+
+
+/*Activities section*/
+
+.activities {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-image: url("img/gato.jpg");
+    background-position:center;
+    background-size: 100%;
+}
+
+.cards-act-container,
+.cards-fur-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;   
+}
+.card-act {
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.8);
+}
+
+
+/*Activities modal*/
+
+.activitie-modal {
+    max-width: 100%;
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.item-container input,
+.item-container select {
+    width: 11rem;
+}
+
+.activitie-modal input,
+.activitie-modal select,
+.activitie-modal textarea {
+    border-radius: 10px;
+    border: 2px solid #EC0843;
+    margin: 0.5rem 0;
+}
+
+.act-name,
+.activitie-modal textarea {
+    width: 90%;
+}
+
+
+/*Activitie card*/
+
+.card-act {
+    background-color: #FFF1F1;
+    height: 20vh;
+    width: 95%;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+
+.card-act h5 {
+    color: black;
+}
+
+.title-card-act,
+.low,
+.mid,
+.high {
+    height: fit-content;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.title-card-act i:hover{
+    cursor:pointer;
+    color: #EC0843;
+}
+
+.high {
+    background-color: #EC0843;
+}
+
+.low {
+    background-color: #8EF05C;
+}
+
+.mid {
+    background-color: #F2CF41;
 }
 
 
@@ -101,7 +487,7 @@ main {
 
 #slogan {
     font-family: 'Oswald', sans-serif;
-    margin: 0 1rem 1rem 1rem;
+    margin: 0 1rem 0 1rem;
 }
 
 #facebook,
@@ -113,10 +499,304 @@ main {
     border-radius: 10px;
     margin: 0.5rem;
     color: white;
+    cursor: pointer;
 }
 
 #google {
     background-color: #D62D22;
+}
+
+#divider {
+    width: 100%;
+    margin: 0;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+/*HOME*/ /*NO BORRAR*/
+
+.flex-container { /*NO BORRAR*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/*IMÁGENES DE FILTRADO*/
+
+#veterinario, /*No borrar*/
+#memes,
+#pet-friendly,
+#tips,
+#perdidos {
+    height: 6vh;
+    border: 0.2rem;
+    cursor: pointer;
+}
+
+.line-1,
+.line-2 {
+    background-color: #EC0843;
+    height: 0.2vh;
+}
+
+.etiquetas-filtrado {
+    font-size: 15px;
+    margin: 0.19rem;
+}
+
+.flex-container a,
+.flex-container p {
+    color: #011627;
+}
+
+.flex-container a, 
+.flex-container p:hover {
+    color: #EC0843;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.memes:hover {
+    color: #EC0843;
+}
+
+
+.sub-archivos {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+/*Cajita para hacer post y elementos del modal*/ /*NO BORRAR*/
+.btn-primary { /*NO BORRAR*/
+    background-color: #EC0843;
+}
+
+    .image {/*NO BORRAR*/
+        display: flex;
+        justify-content: left;
+    }
+    .kitty { /*NO BORRAR*/
+        height: 2rem;
+        width: 2rem;
+    }
+    
+    .publication-conteiner { /*NO BORRAR*/
+        background-color: white;
+        height: 40vh;
+        width: 19.5rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .utilidades { /*NO BORRAR*/
+        background-color: #EC0843;
+        height: 40vh;
+        width: 6rem;
+    }
+    
+    .publicacion { /*NO BORRAR*/
+        border-radius: 8px;
+        margin: 0.5rem;
+        height: 22vh;
+        width: 15rem;
+        border: 2px solid #EC0843;
+        border-collapse: collapse;
+    }
+.btn-btn-primary { /*NO BORRAR*/
+    background-color: #EC0843;
+    border: none;
+    border-radius: 5px;
+    width: 7rem;
+    height: 5vh;
+     display: flex;
+    float: right;
+}
+.btn-text{ /*NO BORRAR*/
+    margin: 0.5rem 0.5rem 4rem 2rem;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.modal-title,
+#cerrar-publicar,
+#btn-publicar {
+    font-family: 'Oswald', sans-serif;
+}
+/*Crear post*/ /*NO BORRAR*/
+.conteiner-post { /*NO BORRAR*/
+    width: 90%;
+    height: 18vh;
+    background-color: white;
+    border: 2px solid #EC0843;
+    justify-content: center;
+    margin: 0.5rem auto;
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.8);
+}
+
+.crea-post { /*NO BORRAR*/
+    width: 100%;
+    height: 6vh;
+    background-color: #EC0843;
+    display: flex;
+    float: right;
+}
+
+.c-post { /*NO BORRAR*/
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3rem;
+}
+
+
+/*Profile container, working with grid*/
+.profile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.profile-header{
+    color: white;
+    display: grid;
+    background-color: #EC0843;
+    height: 35vh;
+    width: 100%;
+    grid-template-columns: auto repeat(2, 1fr);
+    grid-template-rows: 100% ;
+    grid-template-areas: "first mid-photo third";
+}
+
+.profile-header figure{
+    display: flex;
+    justify-content: center;
+}
+
+
+.first{ 
+    visibility: hidden;
+}
+
+.third, .mid-photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mid-photo img {
+    height: 7rem;
+    border-radius: 100%;
+}
+
+.mid-photo h3 {
+    margin: 0;
+}
+
+.mid-photo figure{
+    margin: 0;
+}
+
+.third figure i{
+    font-size:3rem;
+    color: white;
+}
+/*Post*/ /*NO BORRAR*/
+/*Contiene todos los post*/ /*NO BORRAR*/
+.conteiner-all-posts {
+    
+    justify-content: center;
+    
+}
+.photo-post{ /*NO BORRAR*/
+    width: 15rem;
+    height: 3vh;
+    border: #EC0843;
+    display: flex;
+    justify-content: center;
+    
+}
+.think{ /*NO BORRAR*/
+    font-family: 'Oswald', sans-serif;
+}
+.post-print{ /*NO BORRAR*/
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    justify-items: center;
+    margin: 0.5rem;
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.8);
+    
+}
+.photo-profile{ /*NO BORRAR*/
+    height: 10vh;
+    margin: 0.5rem;
+    border-radius: 50px;
+}
+.t{ /*NO BORRAR*/
+    color: white;
+}
+.th{ /*NO BORRAR*/
+    color: #011627;
+}
+.profile-reactions{ /*NO BORRAR*/
+    background-color: #EC0843;
+    width: 30%;
+}
+
+/*Seleccionar filtro*/ /*NO BORRAR*/
+.select-filter{ /*NO BORRAR*/
+    background-color: #EC0843;
+    border: 3px solid #EC0843;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.post-content-theme-title{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.post-info-container{
+    display: flex;
+    width:70%;
+    flex-direction: column;
+    padding: 1rem;
+    
+}
+
+.reactions{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 2rem;
+}
+
+.reactions i{
+    padding: 0.2rem;
+}
+/*Número de likes*/
+.likes{
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -124,6 +804,7 @@ main {
         background-image: url("img/cat2.jpg");
         background-repeat: no-repeat;
     }
+
     .input-login {
         border: 2px solid #011627;
         color: #011627;
@@ -138,4 +819,206 @@ main {
     #logo-login {
         height: 12rem;
     }
+    .menu {
+        display: none;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1rem;
+    }
+    .menu-desktop {
+        display: flex;
+        flex-direction: row;
+    }
+    .menu-desktop li,
+    .menu-desktop a {
+        display: flex;
+        justify-content: space-between;
+        margin: auto 1rem;
+        text-decoration: none;
+        color: #011627;
+    }
+    .menu-desktop li:hover,
+    .menu-desktop a:hover {
+        color: #EC0843;
+        cursor: pointer;
+    }
+    
+    .add-image {
+        height: 2rem;
+        width: 2rem;
+    }
+    
+    .activities{
+        background-image: url("img/hurron-abajo.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+    } 
+    
+    .activities p, .activities h1{
+        background-color: white;
+        padding: 0.5rem;
+        border-radius: 10px;
+        opacity: 0.95;
+    }
+    .cards-act-container {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        padding: 5rem;
+        max-width: 1200px;
+    }
+    .card-act {
+        width: 40%;
+    }
+    /*Crear post*/ /*NO BORRAR*/
+    .crea-post { /*NO BORRAR*/
+        width: 50rem;
+        height: 6vh;
+        background-color: #EC0843;
+        justify-content: left;
+        
+    }
+    .c-post { /*NO BORRAR*/
+        font-family: 'Oswald', sans-serif;
+        color: white;
+        font-size: 1.5rem;
+        margin: 0.01rem ;
+    }
+    .think{ /*NO BORRAR*/
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.5rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .reactions{
+        font-size: 3.5rem;
+        cursor: pointer;
+    }
+    .reactions i:hover{
+        color: orange;
+    }
+    /*CAJA DE PUBLICACIONES*/ /*NO BORRAR*/
+    .publicacion { /*NO BORRAR*/
+        border-radius: 10px;
+        width: 26rem;
+    }
+        
+    /* MI INFO */
+    .mi-info {
+        background-image: url("img/peri.jpg");
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: bottom;  
+    }
+    .cards-fur-container{
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+    }
+    
+    .txt-myinfo{
+        width: 60%;
+    } 
+
+    .txt-myinfo p{
+        padding: 9px;
+    }
+    
+    .img-myinfo {
+        width: 7rem;
+        height: 5rem;
+    margin: 2rem 0 0 0;
+    
+}   
+    /* MI INFO */
+    .card-myinfo {
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+        height: 13rem;
+        padding: 0.3rem;
+        border-radius: 10px;
+         justify-content: center;
+         box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.8);
+         transition: all 0.3s cubic-bezier(.25,.8,.25,1);     
+    }
+
+
+
+    .img-myinfo {
+        width: 7rem;
+        height: 5rem;
+        margin: 2rem 0 0 0;
+    }
+    .profile-header{
+        width: 1200px;
+        display: grid;
+        background-color: #EC0843;
+        height: 30vh;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 100% ;
+        grid-template-areas: "first mid-photo third";
+    }
+    .mid-photo img {
+        height: 9rem;
+        border-radius: 100%;
+    }
+    /*Post NO BORRAR*/
+    
+    .profile-reactions{ /*NO BORRAR*/
+        background-color: #EC0843; 
+        width: 20%;
+    }
+    .photo-profile{ /*NO BORRAR*/
+        height: 14vh;
+        margin: 0.2rem;
+        border-radius: 50px;
+        
+    }
+    .photo-post{ /*NO BORRAR*/
+        width: 20rem;
+        height: 3vh;
+        border: #EC0843;
+        display: flex;
+        justify-content: center;
+        margin: 2rem 2rem 15rem 15rem;
+        
+    }
+    .conteiner-post-home { /*NO BORRAR*/
+        width: 50.1rem;
+        height: 70vh;
+        background-color: white;
+        border: 2px solid #EC0843;
+        display: flex;
+        float: left;
+        flex-direction: row;
+    }
+    .conteiner-post{ /*NO BORRAR*/
+        width: 50.1rem;
+        height: 24vh;
+        background-color: white;
+        border: 2px solid #EC0843;
+        box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.8);
+        
+        
+        
+    }
+    .post-print{ /*NO BORRAR*/
+        display: flex;
+        justify-items: center;
+        margin: 0.5rem;
+        box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.8);
+    }
+    /*Caja que contiene todos los posts NO BORRAR*/
+    .conteiner-all-posts { /*NO BORRAR*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
